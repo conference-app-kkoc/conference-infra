@@ -1,0 +1,44 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  # 00_postgresql
+  - 00_postgresql/c4p-sql-init-configmap.yml
+  - 00_postgresql/postgresql-secrets.yml
+  - 00_postgresql/postgress-headless-service.yml
+  - 00_postgresql/postgresql-clusterip-service.yml
+  - 00_postgresql/postgresql-statefulset.yml
+
+  # 01_kafka
+  - 01_kafka/kafka-serviceaccount.yml
+  - 01_kafka/kafka-script-configmap.yml
+  - 01_kafka/kafka-headless-service.yml
+  - 01_kafka/kafka-clusterip-service.yml
+  - 01_kafka/kafka-statefulset.yml
+
+  # 02_redis
+  - 02_redis/redis-serviceaccount.yml
+  - 02_redis/redis-secrets.yml
+  - 02_redis/redis-configmap.yml
+  - 02_redis/redis-health-configmap.yml
+  - 02_redis/redis-script-configmap.yml
+  - 02_redis/redis-headless-service.yml
+  - 02_redis/redis-clusterip-service.yml
+  - 02_redis/redis-statefulset.yml
+
+  # 03_notifications
+  - 03_notifications/notifications-service.yml
+  - 03_notifications/notifications-deployment.yml
+
+  # 04_agenda
+  - 04_agenda/agenda-service.yml
+  - 04_agenda/agenda-deployment.yml
+
+  # 05_c4p
+  - 05_c4p/c4p-service.yml
+  - 05_c4p/c4p-deployment.yml
+
+  # 06_frontend
+  - 06_frontend/frontend-service.yml
+  - 06_frontend/frontend-deployment.yml
+  - 06_frontend/ingress.yml

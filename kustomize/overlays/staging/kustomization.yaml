@@ -1,0 +1,34 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - ../../base
+
+patches:
+  - target:
+      group: apps
+      version: v1
+      kind: Deployment
+      name: conference-app-frontend-deployment
+    patch: |-
+      - op: add
+        path: /spec/template/spec/containers/0/env/-
+        value:
+          name: FEATURE_DEBUG_ENABLED
+          value: "true"
+  - target:
+      group: networking.k8s.io
+      version: v1
+      kind: Ingress
+      name: conference-frontend-ingress
+    patch: |-
+      - op: replace
+        path: /spec/rules/0/host
+        value: staging.conference.local
+
+# # Surcharge la variable DEBUG=true pour l'environnement Staging
+# configMapGenerator:
+#   - name: app-env-config
+#     behavior: merge
+#     literals:
+#       - DEBUG=true
