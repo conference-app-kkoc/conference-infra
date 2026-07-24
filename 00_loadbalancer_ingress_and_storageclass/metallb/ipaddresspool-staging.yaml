@@ -15,3 +15,5 @@ metadata:
 spec:
   ipAddressPools:
   - staging-pool
+  interfaces:
+  - enp0s8
