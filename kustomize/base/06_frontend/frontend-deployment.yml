@@ -18,7 +18,8 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: "olivierkkoc/frontend-go-1739aa83b5e69d4ccb8a5615830ae66c:v1.0.1"
+        image: "salaboy/frontend-go-1739aa83b5e69d4ccb8a5615830ae66c:v1.0.0"
+        # image: "olivierkkoc/frontend-go-1739aa83b5e69d4ccb8a5615830ae66c:v1.0.1"
         imagePullPolicy: Always
         env:
         - name: AGENDA_SERVICE_URL
