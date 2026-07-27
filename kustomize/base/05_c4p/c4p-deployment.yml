@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: c4p-service
-        image: "salaboy/c4p-service-a3dc0474cbfa348afcdf47a8eee70ba9:v1.0.0"
+        image: "olivierkkoc/c4p-service-a3dc0474cbfa348afcdf47a8eee70ba9:v1.0.1"
         imagePullPolicy: Always
         env:
         - name: AGENDA_SERVICE_URL
