@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: agenda-service
-        image: "salaboy/agenda-service-0967b907d9920c99918e2b91b91937b3:v1.0.0"
+        image: "olivierkkoc/agenda-service-0967b907d9920c99918e2b91b91937b3:v1.0.1"
         imagePullPolicy: Always
         env:
         - name: KAFKA_URL
