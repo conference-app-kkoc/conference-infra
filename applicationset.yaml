@@ -7,10 +7,12 @@ spec:
   generators:
   - list:
       elements:
+      - env: local-hub
+        clusterUrl: https://kubernetes.default.svc
       - env: staging
-        clusterUrl: https://192.168.98.20:6443
+        clusterUrl: https://600E2519186BE47FD132A9CBEC671336.gr7.us-east-1.eks.amazonaws.com
       - env: prod
-        clusterUrl: https://192.168.98.30:6443
+        clusterUrl: https://10DACB96EB7E2D16DDA2025F79BE83E0.gr7.us-east-1.eks.amazonaws.com 
   template:
     metadata:
       name: 'conference-app-{{env}}'
